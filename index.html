@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="open source is nice">
+    <title>openBlog</title>
+</head>
+<style>
+    .sidenav{
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overlflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    .sidenav a{
+        padding: 6px 8px 6px 160px;
+        text-decoration: none;
+        font-size: 23px;
+        display: block;
+        color: black;
+    }
+
+    .sidenav a:hover{
+        color: #4d4d4d
+    }
+
+    .intro{
+        margin-right: 135px;
+        margin-left: 300px;
+        right: 100px;
+        padding: 0px 10px;
+        font-size: 21px;
+        hyphens: auto;
+        text-align: justify;
+    }
+
+    .bullet-points{
+        font-size: 21px;
+    }
+
+    .bullet-points:hover{
+        color: #4d4d4d
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .headline {
+        flex: 1;
+    }
+
+    .headline:first-child {
+        margin-left: 300px;
+    }
+
+    .headline:last-child{
+        margin-right: 135px;
+    }
+
+</style>
+<body>
+<div class="sidenav">
+    <a href="https://discord.gg/M9fvHT9j">Discord</a>
+    <a href="#">Mail</a>
+    <a href="#">Contributors</a>
+    <a href="#">EN/DE</a>
+</div>
+
+<div class="intro">
+    <p>This is a blog which aim it is to push artificial intelligence in society.
+    Together we wanna learn about the topic and we provide a divers community to think in first principles about AI.
+    Join our Discord and start to be a openblog contributor - read here to learn more.</p>
+</div>
+
+<div class="flex-container">
+    <div class="headline">
+        <h1>Newest</h1>
+        <div class="bullet-points">
+            <li><u>Computer Vision</u></li>
+            <li><u>Natural Language Processing</u></li>
+            <li><u>Machine Learning Speech Recognition</u></li>
+            <li><u>Artificial Neural Networks</u></li>
+            <li><u>Deep Neural Networks</u></li>
+            <li><u>Image Recognition</u></li>
+        </div>
+    </div>
+    <div class="headline">
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="headline">
+        <h1>Machine Learning</h1>
+        <div class="bullet-points">
+            <li><u>Computer Vision</u></li>
+            <li><u>Natural Language Processing</u></li>
+            <li><u>Machine Learning Speech Recognition</u></li>
+        </div>
+    </div>
+    <div class="headline">
+        <h1>Deep Learning</h1>
+        <div class="bullet-points">
+            <li><u>Artificial Neural Networks</u></li>
+            <li><u>Deep Neural Networks</u></li>
+            <li><u>Image Recognition</u></li>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+<!-- I need a div where I can structure my sidebar -> I could seperate the code into header, main and footer -->
+<!-- I also have to increase the size and perhaps have to add the distance between the items -->
+<!-- where to define classes and id? -->
+</html>
