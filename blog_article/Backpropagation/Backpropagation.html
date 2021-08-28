@@ -23,7 +23,7 @@
 <h1>Backpropagation</h1>
 
 <p>
-An Artificial Neural Network is trained with rules. These rules are for predicting in the best possible way the right output of an input. For example, if you wanna predict the weather in the best possible way. The neural network doesn't know this automatically so it needs to be fed with weather data from past decades. In this process of learning an algorithm which is called backpropagation is used.
+An Artificial Neural Network is trained with rules. These rules are for predicting in the best possible way the right output of an input. For example, if you wanna predict the weather in the best possible way. The neural network doesn't know this automatically so it needs to be fed with weather data from past decades. This learning process uses an algorithm called backpropagation.
 </p>
 <p>
 At the beginning you chose your weights randomly. That you can't predict at the beginning something which is close to the actual result except with luck is logical because of the pure randomness of the chosen weights. If you train your network you get an output from your now chosen randomly weight. With this value and the actual value you can build an error function which tells you the “incorrectness” of your result and based on this incorrectness you calculate your weights again based on a procedure which is called gradient descent. You repeat this process till you get a really small error between your output value and the actual value. If you found weights which are responsible for a small result of the error function you can start with using the neural network so that it makes sense in terms of which predictions you can get.
