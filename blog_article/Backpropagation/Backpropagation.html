@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h1 ,h2{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<body>
+
+<h1>Backpropagation</h1>
+
+<p>
+An Artificial Neural Network is trained with rules. These rules are for predicting in the best possible way the right output of an input. For example, if you wanna predict the weather in the best possible way. The neural network doesn't know this automatically so it needs to be fed with weather data from past decades. In this process of learning an algorithm which is called backpropagation is used.
+</p>
+<p>
+At the beginning you chose your weights randomly. That you can't predict at the beginning something which is close to the actual result except with luck is logical because of the pure randomness of the chosen weights. If you train your network you get an output from your now chosen randomly weight. With this value and the actual value you can build an error function which tells you the “incorrectness” of your result and based on this incorrectness you calculate your weights again based on a procedure which is called gradient descent. You repeat this process till you get a really small error between your output value and the actual value. If you found weights which are responsible for a small result of the error function you can start with using the neural network so that it makes sense in terms of which predictions you can get.
+</p>
+<h2>Error Function</h2>
+
+
+<p>
+Let's take a closer look at the error function. There are different functions which fit for the specific scenario better than another one. We focus on the squared error.
+</p>
+<p><span class="math display">\[E=\frac{1}{2} \sum\limits^{n}_{i=1} (t_{i}-o_{i})^{2}\]</span></p>
+<p>
+E = Error
+</p>
+<p>
+n = the number of patterns presented to the network
+</p>
+<p>
+t = aimed value
+</p>
+<p>
+0 = actual value
+</p>
+<p>
+With this function you get to know every epoch (round) how far away you are from the aimed value - this is quite important because only if you know this difference between your actual value and your aimed value you know if you still have to train your model or not.
+</p>
+<h2>How to redefine values to get close to the aimed value?</h2>
+
+
+<p>
+To propagate back (from output to input) and change only those weights which have to be changed for minimizing the result of the error function you use the derivation of the error function with respect to a weight with which you are able to find minimas. The most used concept for this procedure is called gradient descent.
+</p>
+
+</body>
+</html>
