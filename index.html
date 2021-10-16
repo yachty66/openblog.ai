@@ -2,133 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="open source is nice">
-    <title>openBlog</title>
-    <link rel="icon" href="Logo/Openblog.svg" type="image/icon type">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    .sidenav{
-        width: 160px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        overlflow-x: hidden;
-        padding-top: 20px;
-    }
-
-    .sidenav a{
-        padding: 6px 8px 6px 160px;
-        text-decoration: none;
-        font-size: 23px;
-        display: block;
-        color: black;
-    }
-
-    .sidenav a:hover{
-        color: #4d4d4d
-    }
-
-    .sidenav b{
-        padding: 6px 8px 6px 136px;
-    }
-
-    .intro{
-        margin-right: 135px;
-        margin-left: 300px;
-        right: 100px;
-        padding: 0px 10px;
-        font-size: 21px;
-        hyphens: auto;
-        text-align: justify;
-    }
-
-    .bullet-points{
-        font-size: 21px;
-        color: inherit;
-    }
-
-    .bullet-points:hover{
-        color: #4d4d4d
-    }
-
-    a{
-        color: inherit;
-    }
-
-    .flex-container {
-        display: flex;
-    }
-
-    .headline {
-        flex: 1;
-    }
-
-    .headline:first-child {
-        margin-left: 300px;
-    }
-
-    .headline:last-child{
-        margin-right: 135px;
-    }
-
-</style>
 <body>
-<div class="sidenav">
-    <b><img src="Logo/Openblog.svg" alt="Artificial neural network" width="150" height="150"></b>
-    <a href="https://discord.gg/FtMWATnT57">Discord</a>
-    <a href="mailto:openblog.ai@gmail.com">Mail</a>
-    <a href="Contributors.html">Contributors</a>
+<div class="main-container">
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <b><img src="Logo/Openblog.svg" alt="Artificial neural network" width="150" height="150"></b>
+            <a href="https://discord.gg/FtMWATnT57">Discord</a>
+            <a href="mailto:openblog.ai@gmail.com">Mail</a>
+            <a href="Contributors.html">Contributors</a>
+        </div>
+    </div>
+    <div class="content-container">
+        <!--Intro-->
+        <div class="intro">
+            This is a blog which aim it is to push artificial intelligence in society.
+            Together we wanna learn about the topic and we provide a diverse community to think in first principles about AI.
+            Join our Discord and start to be a openblog contributor - read <a href="How_to_contribute/how_to_contribute.html"><c>here</c></a> to learn more.
+        </div>
+
+        <!--Newest-->
+        <div class="content">
+            <div class="flex-container">
+                <div class="headline">
+                    <h1>Newest</h1>
+                    <div class="bullet-points"><a href="blog_article/AI_Wiki/AI%20Wiki.html"><li>AI Wik</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Difference_AI_ML_DL/DifferenceAIMLDL.html"><li>Differences between AI, ML and DL</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Entwicklung_Medikamente/Entwicklung_Medikamente.html"><li>AI in drug research</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Generating_words_with_an_RNN_in_TensorFlow/Generating%20words%20with%20an%20RNN%20in%20TensorFlow.html"><li>RNN with TensorFlow</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Artificial_Neural_Network/Artificial%20Neural%20Network.html"><li>Artificial Neural Network</li></a></div>
+                </div>
+            </div>
+
+            <!--Content-->
+            <div class="flex-container">
+                <div class="headline">
+                    <h1>Foundations ANN's</h1>
+                    <div class="bullet-points"><a href="blog_article/Artificial_Neural_Network/Artificial%20Neural%20Network.html"><li>Artificial Neural Network</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Backpropagation/Backpropagation.html"><li>Backpropagation</li></a></div>
+                </div>
+                <div></div>
+                <div class="headline">
+                    <h1>TensorFlow</h1>
+                    <div class="bullet-points"><a href="blog_article/Generating_words_with_an_RNN_in_TensorFlow/Generating%20words%20with%20an%20RNN%20in%20TensorFlow.html"><li>RNN with TensorFlow</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/CNN_with_TensorFlow/CNN%20with%20TensorFlow.html"><li>CNN with TensorFlow</li></a></div>
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class="headline">
+                    <h1>Politics & society</h1>
+                    <div class="bullet-points"><a href="blog_article/KI_Arbeitswelt/Arbeitswelt.html"><li>AI in working environment</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Entwicklung_Medikamente/Entwicklung_Medikamente.html"><li>AI in drug research</li></a></div>
+                </div>
+                <div class="headline">
+                    <h1>General</h1>
+                    <div class="bullet-points"><a href="blog_article/AI_Wiki/AI%20Wiki.html"><li>AI Wiki</li></a></div>
+                    <div class="bullet-points"><a href="blog_article/Difference_AI_ML_DL/DifferenceAIMLDL.html"><li>Differences between AI, ML and DL</li></a></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-
-<div class="intro">
-    <p>This is a blog which aim it is to push artificial intelligence in society.
-    Together we wanna learn about the topic and we provide a diverse community to think in first principles about AI.
-    Join our Discord and start to be a openblog contributor - read <a href="How_to_contribute/how_to_contribute.html">here</a> to learn more.</p>
-</div>
-
-<div class="flex-container">
-    <div class="headline">
-        <h1>Newest</h1>
-        <div class="bullet-points"><a href="blog_article/AI_Wiki/AI%20Wiki.html"><li><u>AI Wiki</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Difference_AI_ML_DL/DifferenceAIMLDL.html"><li><u>Difference between AI,machine learning and deep learning</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Entwicklung_Medikamente/Entwicklung_Medikamente.html"><li><u>AI in drug research</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Generating_words_with_an_RNN_in_TensorFlow/Generating%20words%20with%20an%20RNN%20in%20TensorFlow.html"><li><u>Generating words with an RNN in TensorFlow</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Artificial_Neural_Network/Artificial%20Neural%20Network.html"><li><u>Artificial Neural Network</u></li></a></div>
-    </div>
-    <div class="headline">
-    </div>
-</div>
-
-<div class="flex-container">
-    <div class="headline">
-        <h1>Foundations ANN's</h1>
-        <div class="bullet-points"><a href="blog_article/Artificial_Neural_Network/Artificial%20Neural%20Network.html"><li><u>Artificial Neural Network</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Backpropagation/Backpropagation.html"><li><u>Backpropagation</u></li></a></div>
-    </div>
-    <div class="headline">
-        <h1>TensorFlow</h1>
-        <div class="bullet-points"><a href="blog_article/Generating_words_with_an_RNN_in_TensorFlow/Generating%20words%20with%20an%20RNN%20in%20TensorFlow.html"><li><u>Generating words with an RNN in TensorFlow</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/CNN_with_TensorFlow/CNN%20with%20TensorFlow.html"><li><u>CNN with TensorFlow</u></li></a></div>
-    </div>
-</div>
-
-<div class="flex-container">
-    <div class="headline">
-        <h1>Politics & society</h1>
-        <div class="bullet-points"><a href="blog_article/KI_Arbeitswelt/Arbeitswelt.html"><li><u>AI in working environment</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Entwicklung_Medikamente/Entwicklung_Medikamente.html"><li><u>AI in drug research</u></li></a></div>
-
-    </div>
-    <div class="headline">
-        <h1>General</h1>
-        <div class="bullet-points"><a href="blog_article/AI_Wiki/AI%20Wiki.html"><li><u>AI Wiki</u></li></a></div>
-        <div class="bullet-points"><a href="blog_article/Difference_AI_ML_DL/DifferenceAIMLDL.html"><li><u>Difference between AI,machine learning and deep learning</u></li></a></div>
-    </div>
-</div>
-
-
-
-
 </body>
 </html>
