@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     font-family: "Roboto Light";
+    background-color: #4a525a;
+    color: #FFFFFF;
 }
 
 .main-container{
@@ -39,7 +41,7 @@
 
 .sidebar a:hover{
     text-decoration: underline;
-    color: #4d4d4d
+    color: #E1D9D1;
 }
 
 .intro{
@@ -75,12 +77,12 @@ c{
 }
 
 c:hover{
-    color: #4d4d4d;
+    color: #E1D9D1;
 }
 
 .bullet-points:hover{
-    color: #4d4d4d;
     text-decoration: underline;
+    color: #E1D9D1;
 }
 
 h1{
@@ -102,6 +104,7 @@ h1{
         font-size: 20px;
         hyphens: auto;
         text-align: justify;
+        padding-right: 15px;
     }
 
     .content{
