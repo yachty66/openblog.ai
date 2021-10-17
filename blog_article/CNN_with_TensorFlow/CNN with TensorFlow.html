@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Put the name of your article inside Title; it will be shown at the tab -->
+    <title>CNN with TensorFlow</title>
+    <link rel="stylesheet" href="../../Contributors_layout/CSS_Layout.css">
 </head>
 <style>
     code {
@@ -19,180 +21,194 @@
     }
 </style>
 <body>
-<h1>CNN with TensorFlow</h1>
+<div class="main">
+    <div class="date">
+        <!-- Put the current date inside CURRENT_DATE -->
+        <p>04.09.2021</p>
+    </div>
+    <div class="article">
+        <!-- Put the name of your article inside MAIN_TITLE -->
+        <h1>CNN with TensorFlow</h1><br>
+        <p>
+            A convolutional neural network (CNN or ConvNet) is a type of an artificial neural network which is used for every kind of image processing. For that it has different layers to spot different features of images. The CNN gets fed with training data and after this learning process it is possible to give test data in the CNN and it will predict the likelihood of affiliation to a class from the labels. Such a CNN is possible to build with TensorFlow - an open source software for machine learning applications. It was created from the Google Brain team and still gets support from Google.
+        </p>
+        <h2>Preparing a ANN for the CNN</h2>
+        <p><code>import tensorflow as tf</code></p>
+        <p>
+            The TensorFlow library with all his functions will be imported.
+        </p>
+        <p><code>mnist = tf.keras.datasets.fashion_mnist</code></p>
+        <p>
+            For the demonstration we use a dataset with images of fashion.
+        </p>
+        <p>
+            <code>tf</code>= The imported TensorFlow library.
+        </p>
+        <p>
+            <code>keras</code> = Is an open source deep learning which is integrated in tensorflow (the founder of keras is a software engineer at Google).
+        </p>
+        <p>
+            <code>datasets</code> = Access to the in tensorflow integrated datasets (there are a lot of different libraries).
+        </p>
+        <p>
+            <code>fashion_mnist</code> = A dataset with the following example items (60000 training images and 10000 test images).
+        </p>
+        <p>
+            <img src="Fashion_MNIST.png" alt="Fashion MNIST" width="naturalWidth" height="300" class="center">
+        </p>
+        <p><code>
+            (training_images, training_labels), (test_images, test_labels) = mnist.load_data()
+        </code></p>
+        <p>
+            We create 4 different categories and load our dataset in these categories which we need to train and test our CNN later (the dataset is already structured in 2 sets and 2 lists).
+        </p>
+        <p><code>
+            training_images=training_images / 255.0
+        </code></p>
+        <p><code>
+            test_images = test_images / 255.0
+        </code></p>
+        <p>
+            We get pictures with values between 0-255 but to work with an ANN we need the images in a format in range of 0 to 1. We normalize the images to this format.
+        </p>
+        <p><code>
 
+            model = tf.keras.models.Sequential([<br>
+            <span class="tab">tf.keras.layers.Flatten(),</span><br>
 
-<p>
-A convolutional neural network (CNN or ConvNet) is a type of an artificial neural network which is used for every kind of image processing. For that it has different layers to spot different features of images. The CNN gets fed with training data and after this learning process it is possible to give test data in the CNN and it will predict the likelihood of affiliation to a class from the labels. Such a CNN is possible to build with TensorFlow - an open source software for machine learning applications. It was created from the Google Brain team and still gets support from Google.
-</p>
-<h2>Preparing a ANN for the CNN</h2>
-<p><code>import tensorflow as tf</code></p>
-<p>
-The TensorFlow library with all his functions will be imported.
-</p>
-<p><code>mnist = tf.keras.datasets.fashion_mnist</code></p>
-<p>
-For the demonstration we use a dataset with images of fashion.
-</p>
-<p>
-<code>tf</code>= The imported TensorFlow library.
-</p>
-<p>
-<code>keras</code> = Is an open source deep learning which is integrated in tensorflow (the founder of keras is a software engineer at Google).
-</p>
-<p>
-<code>datasets</code> = Access to the in tensorflow integrated datasets (there are a lot of different libraries).
-</p>
-<p>
-<code>fashion_mnist</code> = A dataset with the following example items (60000 training images and 10000 test images).
-</p>
-<p>
-<img src="Fashion_MNIST.png" alt="Fashion MNIST" width="naturalWidth" height="300" class="center">
-</p>
-<p><code>
-(training_images, training_labels), (test_images, test_labels) = mnist.load_data()
-</code></p>
-<p>
-We create 4 different categories and load our dataset in these categories which we need to train and test our CNN later (the dataset is already structured in 2 sets and 2 lists).
-</p>
-<p><code>
-training_images=training_images / 255.0
-</code></p>
-<p><code>
-test_images = test_images / 255.0
-</code></p>
-<p>
-We get pictures with values between 0-255 but to work with an ANN we need the images in a format in range of 0 to 1. We normalize the images to this format.
-</p>
-<p><code>
-model = tf.keras.models.Sequential([<br>
-    <span class="tab">tf.keras.layers.Flatten(),</span><br>
-     <span class="tab">tf.keras.layers.Dense(128, activation=tf.nn.relu),</span><br>
-     <span class="tab">tf.keras.layers.Dense(10, activation=tf.nn.softmax)</span><br>
-    ])
-</code></p>
-<p>
-We create our framework for an ANN where we later build our CNN later on.
-</p>
-<p>
-<code>models</code> = Groups layer in an object.
-</p>
-<p>
-<code>Sequential</code> = Groups layer into models.
-</p>
-<p>
-This means we say our program „now we define different layers for our network“.
-</p>
-<p>
-<code>layers</code> = We are inside of Sequential and we define our different layers for the CNN.
-</p>
-<p>
-<code>Flatten</code> = The images had a format of 28x28. With our normalization this means we had before Flatten 28 arrays with each 28 items. After Flatten we have now a one dimensional array.
-</p>
-<p>
-<code>Dense</code> = Adds layers to Sequential.
-</p>
-<p>
-<code>Dense(128, activation=tf.nn.relu)</code> = Inside of Dense we define how this layer should look like. The first parameter is the number of neurons of the layer and the second parameter is the activation function. In our case we use the relu function (now we see also why it is easier to normalize the pixel values of the images) which passes the result values of the function which are equal 0 or greater then 0.
-</p>
-<p>
-<code>tf.keras.layers.Dense(10, activation=tf.nn.softmax)</code> = The next layer has 10 neurons and passes with the softmax function only the biggest values from the former layer.
-</p>
-<h2>Transform a ANN to an CNN</h2>
-<p>
-We defined an ANN and now we can add the convolutional layer to the network to transform the ANN to an CNN.<br>
-    Till now we have the following format:
-</p>
-<p><code>
-    <span>import tensorflow as tf</span><br>
-    <span>mnist = tf.keras.datasets.fashion_mnist</span>
-    <span>(training_images, training_labels), (test_images, test_labels) = mnist.load_data()</span><br>
-    <span>training_images=training_images / 255.0</span><br>
-    <span>test_images=test_images/255.0</span><br>
-    <span>model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),</span><br>
-    <span class = "tab">tf.keras.layers.Dense(128, activation=tf.nn.relu),</span><br>
-    <span class = "tab">tf.keras.layers.Dense(10, activation=tf.nn.softmax)</span><br>
-    <span>])</span>
-</code></p>
-<p>
-For the CNN - before we normalize our images we need to reshape them:
-</p>
-<p><code>
-    import tensorflow as tf<br>
-    mnist = tf.keras.datasets.fashion_mnist<br>
-    (training_images, training_labels), (test_images, test_labels) = mnist.load_data()<br>
-    training_images=training_images.reshape(60000, 28, 28, 1)<br>
-    training_images=training_images / 255.0<br>
-    test_images = test_images.reshape(10000, 28, 28, 1)<br>
-    test_images=test_images/255.0
-</code></p>
-<p>
-<code>training_images=training_images.reshape(60000, 28, 28, 1)</code> = Tensorflow works with tensors which are vectors. If we add one to the before existing shape (60000, 28, 28) we have instead of 60000x28x28 tensors one tensor.
-</p>
-<p>
-<code>test_images = test_images.reshape(10000, 28, 28, 1)</code> = The same happens with the test images.
-</p>
-<h3>Now we can define our convolutional layers</h3>
-<p><code>
-    <span>model = tf.keras.models.Sequential([</span><br>
-    <span class="tab">tf.keras.layers.Conv2D(64, (3,3), activation='relu', input_shape=(28, 28, 1)),</span><br>
-    <span class="tab">tf.keras.layers.MaxPooling2D(2, 2),</span><br>
-    <span class="tab">tf.keras.layers.Conv2D(64, (3,3), activation='relu'),</span><br>
-    <span class="tab">tf.keras.layers.MaxPooling2D(2,2),</span><br>
-    <span class="tab">tf.keras.layers.Flatten(),</span><br>
-    <span class="tab">tf.keras.layers.Dense(128, activation='relu'),</span><br>
-    <span class="tab">tf.keras.layers.Dense(10, activation='softmax')</span><br>
-    <span>])</span><br>
-</code></p>
-<p>
-    <code>tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28, 28, 1))</code> = We define the first convolutional layer. Parameter one is the number of convolutions. Parameter two is the size of the convolution. Parameter three is again the relu activation function. Parameter four is the input shape of the first input data - 28x28 because our images have 28x28 pixels and they are in greyscale so we have only one shape.
-</p>
-<p>
-<code>tf.keras.layers.MaxPooling2D(2, 2)</code> = Now we can add an MaxPooling2D layer. The two parameters are the size of the pooling layers. Imagine as a filter with which you reduce the size of the image by going in a quarter of 2x2 over every pixel and then pick the biggest one and put it in the new layer.
-</p>
-<p>
-We add another convolution + pooling layer and then we are ready to flatten the output to feed it in our known ANN.
-</p>
-<h3>Make use of the CNN</h3>
-<p><code>
-model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-</code></p>
-<p>
-<code>compile</code> = First of all we build the CNN. It's possible to build it with different parameters.
-</p>
-<p>
-<code>optimizer</code> = The optimizer defines how to optimize the weights depending on which loss we get. Adam is the name of the algorithm for this process.
-</p>
-<p>
-    <code>loss</code> = The loss calculates the differences between targeted value and actually value. <code>sparse_categorical_crossentropy</code> is the specific algorithm for that loss function.
-</p>
-<p>
-<code>metrics</code> = Shows the accuracy for every epoch from the CNN.
-</p>
-<p><code>
-model.fit(training_images, training_labels, epochs=5)
-</code></p>
-<p>
-Now we build our model and it's time to train them with the model.fit method.
-</p>
-<p>
-<code>fit</code> = Fits every data with the associated label.
-</p>
-<p>
-<code>epochs</code> = How many rounds the CNN will be trained on.
-</p>
-<p><code>
-model.evaluate(test_images, test_labels)
-</code></p>
-<p>
-At the end we can check the CNN with unknown data
-</p>
-<p>
-<code>evaluate</code> = Test the CNN for unseen data.
-</p>
-<h2>Conclusion</h2>
-<p>
-With an CNN you basically take an ANN and put additional layers on the top. There are two layers which play an important role. First the convolutional layer which takes an input of pixels of an image and manipulates these pixels to make features more visible. With max pooling the image gets compromised and at the end you get much less data with which you can work and feed the ANN.
-</p>
+            <span class="tab">tf.keras.layers.Dense(128, activation=tf.nn.relu),</span><br>
+            <span class="tab">tf.keras.layers.Dense(10, activation=tf.nn.softmax)</span><br>
+            ])
+            </code></p>
+        <p>
+            We create our framework for an ANN where we later build our CNN later on.
+        </p>
+        <p>
+            <code>models</code> = Groups layer in an object.
+        </p>
+        <p>
+            <code>Sequential</code> = Groups layer into models.
+        </p>
+        <p>
+            This means we say our program „now we define different layers for our network“.
+        </p>
+        <p>
+            <code>layers</code> = We are inside of Sequential and we define our different layers for the CNN.
+        </p>
+        <p>
+            <code>Flatten</code> = The images had a format of 28x28. With our normalization this means we had before Flatten 28 arrays with each 28 items. After Flatten we have now a one dimensional array.
+        </p>
+        <p>
+            <code>Dense</code> = Adds layers to Sequential.
+        </p>
+        <p>
+            <code>Dense(128, activation=tf.nn.relu)</code> = Inside of Dense we define how this layer should look like. The first parameter is the number of neurons of the layer and the second parameter is the activation function. In our case we use the relu function (now we see also why it is easier to normalize the pixel values of the images) which passes the result values of the function which are equal 0 or greater then 0.
+        </p>
+        <p>
+            <code>tf.keras.layers.Dense(10, activation=tf.nn.softmax)</code> = The next layer has 10 neurons and passes with the softmax function only the biggest values from the former layer.
+        </p>
+        <h2>Transform a ANN to an CNN</h2>
+        <p>
+            We defined an ANN and now we can add the convolutional layer to the network to transform the ANN to an CNN.<br>
+            Till now we have the following format:
+        </p>
+        <p><code>
+            <span>import tensorflow as tf</span><br>
+            <span>mnist = tf.keras.datasets.fashion_mnist</span>
+            <span>(training_images, training_labels), (test_images, test_labels) = mnist.load_data()</span><br>
+            <span>training_images=training_images / 255.0</span><br>
+            <span>test_images=test_images/255.0</span><br>
+            <span>model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),</span><br>
+            <span class = "tab">tf.keras.layers.Dense(128, activation=tf.nn.relu),</span><br>
+            <span class = "tab">tf.keras.layers.Dense(10, activation=tf.nn.softmax)</span><br>
+            <span>])</span>
+        </code></p>
+        <p>
+            For the CNN - before we normalize our images we need to reshape them:
+        </p>
+        <p><code>
+            import tensorflow as tf<br>
+            mnist = tf.keras.datasets.fashion_mnist<br>
+            (training_images, training_labels), (test_images, test_labels) = mnist.load_data()<br>
+            training_images=training_images.reshape(60000, 28, 28, 1)<br>
+            training_images=training_images / 255.0<br>
+            test_images = test_images.reshape(10000, 28, 28, 1)<br>
+            test_images=test_images/255.0
+        </code></p>
+        <p>
+            <code>training_images=training_images.reshape(60000, 28, 28, 1)</code> = Tensorflow works with tensors which are vectors. If we add one to the before existing shape (60000, 28, 28) we have instead of 60000x28x28 tensors one tensor.
+        </p>
+        <p>
+            <code>test_images = test_images.reshape(10000, 28, 28, 1)</code> = The same happens with the test images.
+        </p>
+        <h3>Now we can define our convolutional layers</h3>
+        <p><code>
+            <span>model = tf.keras.models.Sequential([</span><br>
+            <span class="tab">tf.keras.layers.Conv2D(64, (3,3), activation='relu', input_shape=(28, 28, 1)),</span><br>
+            <span class="tab">tf.keras.layers.MaxPooling2D(2, 2),</span><br>
+            <span class="tab">tf.keras.layers.Conv2D(64, (3,3), activation='relu'),</span><br>
+            <span class="tab">tf.keras.layers.MaxPooling2D(2,2),</span><br>
+            <span class="tab">tf.keras.layers.Flatten(),</span><br>
+            <span class="tab">tf.keras.layers.Dense(128, activation='relu'),</span><br>
+            <span class="tab">tf.keras.layers.Dense(10, activation='softmax')</span><br>
+            <span>])</span><br>
+        </code></p>
+        <p>
+            <code>tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28, 28, 1))</code> = We define the first convolutional layer. Parameter one is the number of convolutions. Parameter two is the size of the convolution. Parameter three is again the relu activation function. Parameter four is the input shape of the first input data - 28x28 because our images have 28x28 pixels and they are in greyscale so we have only one shape.
+        </p>
+        <p>
+            <code>tf.keras.layers.MaxPooling2D(2, 2)</code> = Now we can add an MaxPooling2D layer. The two parameters are the size of the pooling layers. Imagine as a filter with which you reduce the size of the image by going in a quarter of 2x2 over every pixel and then pick the biggest one and put it in the new layer.
+        </p>
+        <p>
+            We add another convolution + pooling layer and then we are ready to flatten the output to feed it in our known ANN.
+        </p>
+        <h3>Make use of the CNN</h3>
+        <p><code>
+            model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+            </code></p>
+        <p>
+            <code>compile</code> = First of all we build the CNN. It's possible to build it with different parameters.
+        </p>
+        <p>
+            <code>optimizer</code> = The optimizer defines how to optimize the weights depending on which loss we get. Adam is the name of the algorithm for this process.
+        </p>
+        <p>
+            <code>loss</code> = The loss calculates the differences between targeted value and actually value. <code>sparse_categorical_crossentropy</code> is the specific algorithm for that loss function.
+        </p>
+        <p>
+            <code>metrics</code> = Shows the accuracy for every epoch from the CNN.
+        </p>
+        <p><code>
+            model.fit(training_images, training_labels, epochs=5)
+            </code></p>
+        <p>
+            Now we build our model and it's time to train them with the model.fit method.
+        </p>
+        <p>
+            <code>fit</code> = Fits every data with the associated label.
+        </p>
+        <p>
+            <code>epochs</code> = How many rounds the CNN will be trained on.
+        </p>
+        <p><code>
+            model.evaluate(test_images, test_labels)
+        </code></p>
+        <p>
+            At the end we can check the CNN with unknown data
+        </p>
+        <p>
+            <code>evaluate</code> = Test the CNN for unseen data.
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            With an CNN you basically take an ANN and put additional layers on the top. There are two layers which play an important role. First the convolutional layer which takes an input of pixels of an image and manipulates these pixels to make features more visible. With max pooling the image gets compromised and at the end you get much less data with which you can work and feed the ANN.
+        </p>
+    </div>
+
+    <div class="source">
+        <!-- Pls type your name inside YOUR_NAME -->
+        <p>Max Hager</p><br><br>
+    </div>
+</div>
 </body>
 </html>
