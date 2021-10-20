@@ -36,7 +36,9 @@ p {
 }
 
 .date {
-    padding-left: 92%;
+    padding-left: 600px;
+
+    /*padding-left: 92%;*/
     color: #fff;
     text-align: end;
 }
