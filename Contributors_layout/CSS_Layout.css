@@ -91,13 +91,16 @@ a:visited {
     }
 
     .article {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .source {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .date{
+        padding-right: 30px;
     }
 
 }
