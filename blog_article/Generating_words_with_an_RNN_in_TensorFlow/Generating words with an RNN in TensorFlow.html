@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Put the name of your article inside Title; it will be shown at the tab -->
+    <title>RNN with TensorFlow</title>
+    <link rel="stylesheet" href="../../Contributors_layout/CSS_Layout.css">
+</head>
+<body>
+<div class="main">
+    <div class="date">
+        <!-- Put the current date inside CURRENT_DATE -->
+        <p class="p_date">11.09.2021</p>
+    </div>
+    <div class="article">
+        <!-- Put the name of your article inside MAIN_TITLE -->
+        <h1>RNN with TensorFlow</h1><br>
+        <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 
@@ -9129,15 +9146,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -12519,7 +12536,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -13014,7 +13031,7 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -13068,14 +13085,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -13135,7 +13152,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">regularizers</span>
-<span class="kn">import</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">as</span> <span class="nn">ku</span> 
+<span class="kn">import</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">as</span> <span class="nn">ku</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 
@@ -13157,7 +13174,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span> 
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13208,7 +13225,7 @@ div#notebook {
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">:</span> <span class="c1">#for every line in the file</span>
 	<span class="n">token_list</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">([</span><span class="n">line</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#every line is transformed into a sequence &quot;[4,5,13,4,5,9]&quot; - its the numerical value from every word on a line in a list</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">token_list</span><span class="p">)):</span> <span class="c1">#iteration till the length of token_list</span>
-		<span class="n">n_gram_sequence</span> <span class="o">=</span> <span class="n">token_list</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> 
+		<span class="n">n_gram_sequence</span> <span class="o">=</span> <span class="n">token_list</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 		<span class="n">input_sequences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_gram_sequence</span><span class="p">)</span>
 </pre></div>
 
@@ -13322,19 +13339,19 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Model: &#34;sequential&#34;
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param #
 =================================================================
-embedding (Embedding)        (None, 10, 100)           321100    
+embedding (Embedding)        (None, 10, 100)           321100
 _________________________________________________________________
-bidirectional (Bidirectional (None, 10, 300)           301200    
+bidirectional (Bidirectional (None, 10, 300)           301200
 _________________________________________________________________
-dropout (Dropout)            (None, 10, 300)           0         
+dropout (Dropout)            (None, 10, 300)           0
 _________________________________________________________________
-lstm_1 (LSTM)                (None, 100)               160400    
+lstm_1 (LSTM)                (None, 100)               160400
 _________________________________________________________________
-dense (Dense)                (None, 1605)              162105    
+dense (Dense)                (None, 1605)              162105
 _________________________________________________________________
-dense_1 (Dense)              (None, 3211)              5156866   
+dense_1 (Dense)              (None, 3211)              5156866
 =================================================================
 Total params: 6,101,671
 Trainable params: 6,101,671
@@ -13659,11 +13676,11 @@ Epoch 100/100
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">seed_text</span> <span class="o">=</span> <span class="s2">&quot;Help me artificial intelligence, you&#39;re my only hope&quot;</span> <span class="c1">#on this text we start with generating next words</span>
 <span class="n">next_words</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#the number of next words we wanna generate</span>
-  
+
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">next_words</span><span class="p">):</span>
 	<span class="n">token_list</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">([</span><span class="n">seed_text</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#applying tokenizer on seed_text so we get the seed_text in form of sequences and taking the index 0 sequence</span>
 	<span class="n">token_list</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">([</span><span class="n">token_list</span><span class="p">],</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_sequence_len</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span> <span class="c1">#applying padding on the sequence</span>
-	<span class="n">predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">token_list</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+	<span class="n">predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">token_list</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 	<span class="n">output_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 	<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 		<span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="n">predicted</span><span class="p">:</span>
@@ -13720,7 +13737,19 @@ Epoch 100/100
   </div>
 </body>
 
- 
 
 
+
+</html>
+
+
+    </div>
+
+    <div class="source">
+        <!-- Pls type your name inside YOUR_NAME -->
+        <p>Max Hager</p><br><br>
+
+    </div>
+</div>
+</body>
 </html>
