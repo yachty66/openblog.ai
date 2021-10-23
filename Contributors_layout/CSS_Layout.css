@@ -33,16 +33,19 @@ p {
     font-style: italic;
     font-size: 12px;
     line-height: 22px;
+
 }
 
+
+.p_date{
+    text-align: right;
+}
 .date {
 
-
-    padding-left: 92%;
     color: #fff;
+    padding-right: 140px;
 
-    text-align: end;
-    text-align: right;
+
 }
 
 .article {
@@ -59,13 +62,16 @@ p {
 a:link {
     color: #fff;
 }
-
-.main{
-    width: 1440px;
-    margin: auto;
+a:visited {
+    color: #fff;
 }
 
-@media (max-width: 1440px){
+.main{
+    max-width: 2040px;
+
+}
+
+@media (min-width: 1440px){
     .main{
         width: 100%;
         margin: auto;
