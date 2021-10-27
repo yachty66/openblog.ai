@@ -81,6 +81,13 @@ a:visited {
 
         margin-left: 68px;
 }
+.grafik{
+    text-align: center;
+}
+.p_grafik{
+    text-align: center;
+    font-size: 12px;
+}
 @media (min-width: 1440px){
     .main{
         width: 100%;
