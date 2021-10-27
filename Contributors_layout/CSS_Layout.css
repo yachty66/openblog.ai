@@ -70,7 +70,17 @@ a:visited {
     max-width: 2040px;
 
 }
+.code{
+    font-size: 14px;
+    background-color: #8c8c8c;
+    color: #1a1a1a;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.tab {
 
+        margin-left: 68px;
+}
 @media (min-width: 1440px){
     .main{
         width: 100%;
