@@ -11,11 +11,11 @@
 <div class="main">
     <div class="date">
         <!-- Put the current date inside CURRENT_DATE -->
-        <p class="p_date">CURRENT_DATE</p>
+        <p class="p_date">31.10.2021</p>
     </div>
     <div class="article">
         <!-- Put the name of your article inside MAIN_TITLE -->
-        <h1>Differences loss and cost function</h1><br>
+        <h1>Loss and cost function</h1><br>
         <p>Andriy Burkov writes in this book “The hundred page machine learning book” that an learning algorithm consists of three parts:</p>
         <ol>
             <li>A loss function</li>
@@ -26,12 +26,12 @@
 
         <!-- Put the name of your SUB_TITLE in h2 and your text inside p. If you have more chapters in your article, please copy&paste h2 and p for every chapter -->
         <h2>Loss function</h2>
-        <p>The loss function is a value which is calculated on every instance. Usually you need multiple rounds to come closer to an actual result for which you are aiming for and what is usable. In every round the loss function gets calculated with updated values.</p>
+        <p>The loss function is a value which is calculated in every round of calculating a cost function. Usually you need multiple rounds in your learning algorithm to come closer to an actual result for which you are aiming for and what is usable. In every round the loss function gets calculated with updated values.</p>
         <h2>Cost function</h2>
         <p>The cost function can be seen as the average of all the results of the loss function which are calculated in every round in the process of a learning algorithm.</p>
         <br>
-        <p>This means that the cost function describes the process of learning more in general and the loss function the small instance which produces the end result.
-            It is possible to use different functions to come to the same result. One popular function is the mean squared error.</p>
+        <p>This means that the cost function describes the process of learning more in general and the loss function the small instances which produces the end result.
+            It is possible to use different functions in the process of an cost function. One popular function is the mean squared error.</p>
 
         <p><span class="math display">\[J_D(\theta_0, \theta_1)=\frac{1}{2m} \sum\limits^{m}_{i=1} (h_\theta(x^{i})-y^{i})^{2}\]</span></p>
         <p><span class="math display">\(J_D(\theta_0, \theta_1)\)</span> = cost function with input of two variables for the linear hyptothesis</p>
@@ -40,25 +40,26 @@
         <p><span class="math display">\(x^{i}\)</span> = x of i data point</p>
         <p><span class="math display">\(y^{i}\)</span> = x of i data point</p>
 
-        <p>The whole expression can be called cost function and the iterative steps to come to teh final result of the cost function can be called error function</p>
-
-
-
+        <p>The whole mathematical expression can be called cost function and every iterative step to come to the final result of the cost function is the result of each steps from the error function.</p>
         <!-- If you need a line-break inside your chapter/text, type <br> at the end of your line -->
-        <p>TEXT</p><br>
     </div>
 
     <div class="source">
         <!-- Pls type your name inside YOUR_NAME -->
-        <p>YOUR_NAME</p><br><br>
+        <p>Max Hager</p><br><br>
         <h4 id="h_sources">Sources:</h4>
         <!-- Copy all your sources here, copy&paste "<p id="p_sources">[1] YOUR_SOURCE_1</p>" for every single source and
         raise the number. If you have an online link, pls use "<p class="p_sources"><a href="YOUR_ADRESS">YOUR_SOURCE</a></p>"
         If you didn't use a source, pls delete both parts-->
-        <p class="p_sources">[1] YOUR_SOURCE_1</p>
         <!--For online links, put the URL inside YOUR_ADRESS and the URL or a describing name inside YOUR_SOURCE-->
-        <p class="p_sources"><a href="YOUR_ADRESS">[1] YOUR_SOURCE</a></p>
-
+        <p class="p_sources"><a href="https://stats.stackexchange.com/questions/179026/objective-function-cost-function-loss-function-are-they-the-same-thing
+            ">[1] https://stats.stackexchange.com/questions/179026/objective-function-cost-function-loss-function-are-they-the-same-thing
+        </a></p>
+        <p class="p_sources"><a href="https://intellipaat.com/community/41845/what-is-the-difference-between-a-cost-function-and-a-loss-function-in-machine-learning
+            ">[2] https://intellipaat.com/community/41845/what-is-the-difference-between-a-cost-function-and-a-loss-function-in-machine-learning
+        </a></p>
+        <p class="p_sources"><a href="https://www.amazon.de/-/en/Andriy-Burkov/dp/199957950X/ref=sr_1_1?crid=2TWXLUX26CB8F&dchild=1&keywords=the+hundred+page+machine+learning+book&qid=1635679822&sprefix=the+hundred+page+m%2Caps%2C181&sr=8-1
+            ">[3] https://www.amazon.de/-/en/Andriy-Burkov/dp/199957950X/ref=sr_1_1?crid=2TWXLUX26CB8F&dchild=1&keywords=the+hundred+page+machine+learning+book&qid=1635679822&sprefix=the+hundred+page+m%2Caps%2C181&sr=8-1
     </div>
 </div>
 </body>
