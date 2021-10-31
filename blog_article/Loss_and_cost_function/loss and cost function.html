@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Put the name of your article inside Title; it will be shown at the tab -->
+    <title>TITLE</title>
+    <link rel="stylesheet" href="../../Contributors_layout/CSS_Layout.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div class="date">
+        <!-- Put the current date inside CURRENT_DATE -->
+        <p class="p_date">CURRENT_DATE</p>
+    </div>
+    <div class="article">
+        <!-- Put the name of your article inside MAIN_TITLE -->
+        <h1>Differences loss and cost function</h1><br>
+        <p>Andriy Burkov writes in this book “The hundred page machine learning book” that an learning algorithm consists of three parts:</p>
+        <ol>
+            <li>A loss function</li>
+            <li>an optimization criterion based on the loss function (a cost function for example); and</li>
+            <li>an optimization routine leveraging training data to find a solution to the optimization criterion.</li>
+        </ol>
+        <p>To understand the first two points it is necessary to understand what a loss function and cost function is.</p>
+
+        <!-- Put the name of your SUB_TITLE in h2 and your text inside p. If you have more chapters in your article, please copy&paste h2 and p for every chapter -->
+        <h2>Loss function</h2>
+        <p>The loss function is a value which is calculated on every instance. Usually you need multiple rounds to come closer to an actual result for which you are aiming for and what is usable. In every round the loss function gets calculated with updated values.</p>
+        <h2>Cost function</h2>
+        <p>The cost function can be seen as the average of all the results of the loss function which are calculated in every round in the process of a learning algorithm.</p>
+        <br>
+        <p>This means that the cost function describes the process of learning more in general and the loss function the small instance which produces the end result.
+            It is possible to use different functions to come to the same result. One popular function is the mean squared error.</p>
+
+        <p><span class="math display">\[J_D(\theta_0, \theta_1)=\frac{1}{2m} \sum\limits^{m}_{i=1} (h_\theta(x^{i})-y^{i})^{2}\]</span></p>
+        <p><span class="math display">\(J_D(\theta_0, \theta_1)\)</span> = cost function with input of two variables for the linear hyptothesis</p>
+        <p><span class="math display">\(m\)</span> = number of data points</p>
+        <p><span class="math display">\(h_\theta\)</span> = linear hypothesis (<span class="math display">\(h_\theta(x)=\theta_0+\theta_1x\)</span>)</p>
+        <p><span class="math display">\(x^{i}\)</span> = x of i data point</p>
+        <p><span class="math display">\(y^{i}\)</span> = x of i data point</p>
+
+        <p>The whole expression can be called cost function and the iterative steps to come to teh final result of the cost function can be called error function</p>
+
+
+
+        <!-- If you need a line-break inside your chapter/text, type <br> at the end of your line -->
+        <p>TEXT</p><br>
+    </div>
+
+    <div class="source">
+        <!-- Pls type your name inside YOUR_NAME -->
+        <p>YOUR_NAME</p><br><br>
+        <h4 id="h_sources">Sources:</h4>
+        <!-- Copy all your sources here, copy&paste "<p id="p_sources">[1] YOUR_SOURCE_1</p>" for every single source and
+        raise the number. If you have an online link, pls use "<p class="p_sources"><a href="YOUR_ADRESS">YOUR_SOURCE</a></p>"
+        If you didn't use a source, pls delete both parts-->
+        <p class="p_sources">[1] YOUR_SOURCE_1</p>
+        <!--For online links, put the URL inside YOUR_ADRESS and the URL or a describing name inside YOUR_SOURCE-->
+        <p class="p_sources"><a href="YOUR_ADRESS">[1] YOUR_SOURCE</a></p>
+
+    </div>
+</div>
+</body>
+</html>
