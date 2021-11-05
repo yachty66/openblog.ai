@@ -26,7 +26,7 @@
 }
 
 .sidebar{
-    width: 62%;
+    width: 72%;
     float: right;
 }
 
@@ -115,6 +115,9 @@ h1{
         width: 100%;
         float: right;
     }
+    .sidebar a{
+        font-size: 18px;
+    }
 
     .flex-container {
         width: 100%;
@@ -146,6 +149,7 @@ h1{
         font-size: 20px;
         padding-top: 20px;
         margin-left: 12%;
+        font-size: 15px;
     }
 
     img{

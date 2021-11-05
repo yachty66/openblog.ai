@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overfitting</title>
+    <link rel="stylesheet" href="../../Contributors_layout/CSS_Layout.css">
+</head>
+<body>
+<div class="main">
+    <div class="date">
+        <p class="p_date">31.10.2021</p>
+    </div>
+    <div class="article">
+        <h1>Overfitting</h1><br>
+        <h2>What is overfitting?</h2>
+        <p>In the context of machine learning, the adaptation of the algorithm to the training data is called
+            overfitting. This means that the parameters to be learned are oriented too strongly to the given data, which
+            means that the founded correlations are not valid or the model can't be applied to a real problem. In order
+            to understand this more precisely, one must keep in mind that machine learning is inductive. This means that
+            general concepts are learned on the basis of specific examples. The principle of the inductive learning goes
+            back to Aristotle, it is based on experiences and means analogously:<br>
+            Person X has a head<br>
+            Person Y has a head<br>
+            Person Z has a head<br>
+            = every person has a head<br>
+            However, the conclusion that all persons have a head is an unproven assumption. The counterpart to this is
+            deductive learning, which I will not explain here.
+
+            To come back to overfitting, a simple example can be seen in the following diagram. In the right area the
+            straight line (= prediction model) runs exactly through all data points. But if a new input value is used to
+            forecast a prediction, it is very likely that the prediction will lie a good distance away from the straight
+            line. This means that the variance is too high. In the left area you can see the counterpart to overfitting,
+            the underfitting. In this case, the model does not have enough features to make a classification. Most of
+            the training data points have a large distance to the model, which will then also apply to most of the data
+            to be predicted. This is also called a high bias. In general, we can say that with underfitting there is too
+            much generalization (=too few parameters) and with overfitting there is too much specialization (=some
+            parameters are weighted too much). Our final model must manage the balancing act between both. In practice,
+            however, underfitting is usually easier to detect on the basis of the test data and to eliminate by, for
+            example, more training runs. </p><br>
+        <!-- The next code fragment can you take for including a graphic/diagram. It should be inside the <p>...</p> tag of your article text. For the XX you can put a number between 1 and 100 inside, depending how big it should be shown. Important!: Pls take the original link to your graphic inside YOUR_ADRESS and give a name in YOUR_SOURCE and put the sources at the end of your article aswell-->
+        <div class="grafik"><img src="over-underfitting.png" width="60%" height="60%">
+            <p class="p_grafik">Source:<a
+                    href="https://medium.com/greyatom/what-is-underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6803a989c76">medium.com</a>
+            </p></div>
+        <br>
+        <p>A good example for overfitting in the field of neural networks would be a model that is supposed to assign
+            males and females in pictures to a gender. If you give the algorithm only pictures where women have long
+            hair and men have short hair, it will have a problem as soon as it has to classify a man with long hair. Due
+            to the one-sided data, it could declare all men with long hair as women. Of course this does not have to be
+            so, since also still other characteristics for the classification are present, but possibly the hair is such
+            a strong feature that it could be considered as general decision criterion.<br>
+            In general you can say that the number of parameters in relation to the data set size plays an important
+            role, the more data there is, the more features can be used in the model.
+        </p><br>
+        <h2>Possible solutions to prevent overfitting</h2>
+        <p>There are several ways to prevent overfitting. The most obvious is to use more data. However, this is often
+            not possible in practice. How you can still improve your result with limited data is explained in the next
+            section.<br>
+            Alternatively, you can use dropouts for neural networks, for example. This means that during learning, a
+            certain number of neurons is deactivated at each neuron layer, which causes the weighting of the neighboring
+            neurons to change more. Adjusting the learning rate, which means how much a new example is included in the
+            parameter adjustment of the model, can also counteract overfitting. In simpler, mostly supervised models,
+            different parameters are sometimes reduced to a feature, making them less influential on the output
+            data. </p><br>
+        <h2>Training, validation and test data</h2>
+        <p>In machine learning, data is often divided into three groups. These are the group of training data,
+            validation data and test data. This is always done before the first training run, an approximate ratio is
+            often 60% / 20% / 20%, but in the end there are no exact standards for this. With especially small data
+            sets, sometimes only training data (approx. 80%) and test data (approx. 20%) are distinguished, but this
+            often leads to not so meaningful models. But why is this done?<br>
+            In the first step a model is fed with the training data. However, certain hyperparameters of the model or
+            neural network can be defined in advance (e.g. number of neurons in some layers, the learning rate and the
+            number of layers). For different variations of these hyperparameters a separate prototype is created. Now
+            the validation data set comes into play. This now tests the different model templates with regard to their
+            accuracy in prediction. The algorithm with the highest accuracy is now chosen and used as the final model.
+            However, if you stop at this point, you make the mistake of assuming the "best possible scenario" to be the
+            "most likely scenario", which is often not the case in practice. The determined error rate would therefore
+            also be influenced by the (in this case) test data. Therefore, in practice, the selected variant is run
+            again with not yet used test data to get a better prediction error, the test data set is thus completely
+            detached from the selection of the model.<br>
+            Sometimes, however, there is no rigid pre-selection of data sets. In the N-Fold cross-validation method, the
+            data are divided into different participations, where then in each run one data set represents the test data
+            and the rest the training data. The data sets switch through until each part has provided the test data
+            once. This method minimizes the risk that the test data is not representative.<br>
+
+            Finally, there is the question of how to notice that a model is overfitting to the data at hand. For this
+            purpose, the model is tested with the test data after different phases or epochs (= runs with the training
+            data). The training accuracy becomes higher with each further run, which is also true for the test data
+            accuracy in the beginning. But after a certain point, the test accuracy decreases, and exactly then the
+            model starts to overfit.</p><br>
+    </div>
+
+    <div class="source">
+        <p>Kevin Kessel</p><br><br>
+        <h4 id="h_sources">Sources:</h4>
+        <p class="p_sources"><a
+                href="https://medium.com/greyatom/what-is-underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6803a989c76">[1]
+            https://medium.com/greyatom/what-is-underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6803a989c76</a>
+        </p>
+        <p class="p_sources"><a href="https://datamines.de/cross-validation/">[2]
+            https://datamines.de/cross-validation/</a></p>
+        <p class="p_sources"><a href="https://databraineo.com/ask-the-doc/overfitting-in-machine-learning/">[3]
+            https://databraineo.com/ask-the-doc/overfitting-in-machine-learning/</a></p>
+        <p class="p_sources"><a
+                href="https://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/">[4]
+            https://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/</a></p>
+        <p class="p_sources"><a
+                href="https://qastack.com.de/stats/19048/what-is-the-difference-between-test-set-and-validation-set">[5]
+            https://qastack.com.de/stats/19048/what-is-the-difference-between-test-set-and-validation-set</a></p>
+
+    </div>
+</div>
+</body>
+</html>
