@@ -32,7 +32,7 @@
         <p class="math display">\(x^T\) = is the transpose of \(x\) (switching of the row and column indices because number of columns has to match the number of rows between the vectors)</p>
         <p class="math display">\(x^Ty \in \mathbb{R}\) = x and y in each vector is a element of the real numbers \(x\)</p>
         <p class="math display">\(\sum_{i=1}^{n}x_iy_i\) = forms the sum with the associated \(x\) and \(y\) at the respective places \(i\)</p>
-        <p class="math display">note = this process repeats itself also for matrix - vector and matrix - matrix products</p>
+        <p class="math display">note = this process repeats itself also for matrix - vector and matrix - matrix products.</p>
 
         <h2>Identity Matrix</h2>
         <p><span class="math display">\[I_{ij}=
@@ -50,7 +50,42 @@
             0 & i\neq y\\
             \end{cases} \]
         </span></p>
-        <p class="math display">note = this expressions shows a case distinction where every non-diagonal elements are zeros.</p>
+        <p class="math display">note = this expressions show a case distinction where all non-diagonal elements are zeros.</p>
+
+        <h2>The Transpose</h2>
+        <p><span class="math display">\[(A^T)_{ij} = A_{ji}\]</span></p>
+        <p class="math display">note = is the flipping of the rows and columns. </p>
+
+        <h2>Symmetric Matrices</h2>
+        <p><span class="math display">\[A = A^T\]</span></p>
+        <p class="math display">note = symmetric matrix.</p>
+        <p><span class="math display">\[A = -A^T\]</span></p>
+        <p class="math display">note = anti symmetric matrix.</p>
+
+        <h2>The Trace</h2>
+        <p><span class="math display">\[trA = \sum_{i=1}^{n}A_{ii}\]</span></p>
+        <p class="math display">note = is the sum of diagonal elements in the matrix.</p>
+
+        <h2>Norms</h2>
+        <p><span class="math display">\[\Vert x \Vert_{2} = \sqrt{\sum_{i=1}^{n}x_{i}^2}\]</span></p>
+        <p class="math display">\(n\) = \(n\) elements of the vector</p>
+        <p class="math display">note = also known as the "SRSS" operation which is an acronym for square root of the sum of squares. The norm measures the "length" of an vector.</p>
+
+        <h2>Linear Dependence/Independence</h2>
+        <p><span class="math display">\[x_{n} = \sum_{i=1}^{n-1} \alpha_i x_{1}\]</span></p>
+        <p class="math display">\(x_n\) = the \(x_n\) vector of an set of vectors \(\{x_1, x_2, ..., x_n\} \)</p>
+        <p class="math display">\(\alpha_i\) = some scalar \(\{x_1, x_2, ..., x_n\} \)</p>
+        <p class="math display">note = if the expression in the figure is fullfilled \(x_n\) is linearly independent else linearly dependent.</p>
+
+        <h2>Rank</h2>
+        <p class="math display">column rank = number of linearly independent columns of an matrix \(A\).</p>
+        <p class="math display">row rank = number of linearly independent rows of an matrix \(A\).</p>
+        <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\).</p>
+
+        <!--<h2>The Inverse</h2>
+        <p class="math display">column rank = number of linearly independent columns of an matrix \(A\)</p>
+        <p class="math display">row rank = number of linearly independent rows of an matrix \(A\)</p>
+        <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\)</p>-->
     </div>
 
     <div class="source">
