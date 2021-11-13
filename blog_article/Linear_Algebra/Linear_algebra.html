@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Put the name of your article inside Title; it will be shown at the tab -->
+    <title>Linear Algebra</title>
+    <link rel="stylesheet" href="../../Contributors_layout/CSS_Layout.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div class="date">
+        <!-- Put the current date inside CURRENT_DATE -->
+        <p class="p_date">06.11.2021</p>
+    </div>
+    <div class="article">
+        <!-- Put the name of your article inside MAIN_TITLE -->
+        <h1>Linear Algebra</h1><br>
+        <pn class="math display">Linear algebra is a way of dealing efficient with linear equations. The "basic units" - that every \(n\)-dimension has an ordered place - are vectors and matrices.</p>
+        <!-- Put the name of your SUB_TITLE in h2 and your text inside p. If you have more chapters in your article, please copy&paste h2 and p for every chapter -->
+        <h2>Vector</h2>
+        <p><span class="math display">\[x=\begin{bmatrix} x_1 \\ x_2 \\ ... \\ x_n \end{bmatrix}\]</span></p>
+        <p class="math display">\(x\) = Description for the vector</p>
+        <p class="math display">\(x_1 .. x_n\) = \(n\) - Dimensions of the vectors</p>
+
+        <h2>Matrix</h2>
+        <p><span class="math display">\[x=\begin{bmatrix} a_{11} && a_{12} && ... && a_{1n} \\ x_{21} && a_{22} && ... && a_{2n} \\ ... && ... && ... && ...\\ x_{m1} && a_{m2} && ... && a_{mn} \end{bmatrix}\]</span></p>
+        <p class="math display">\(x_{11} .. x_{mn}\) = \(mn\) - Dimensions of the matrix</p>
+
+        <h2>Vector - Vector Products</h2>
+        <p><span class="math display">\[x^Ty \in \mathbb{R} = \begin{bmatrix}x_1 && x_2 && ... && x_n\end{bmatrix} \begin{bmatrix}y_1 \\ y_2 \\ ... \\ y_n\end{bmatrix} = \sum_{i=1}^{n}x_iy_i\]</span></p>
+        <p class="math display">\(x^T\) = is the transpose of \(x\) (switching of the row and column indices because number of columns has to match the number of rows between the vectors)</p>
+        <p class="math display">\(x^Ty \in \mathbb{R}\) = x and y in each vector is a element of the real numbers \(x\)</p>
+        <p class="math display">\(\sum_{i=1}^{n}x_iy_i\) = forms the sum with the associated \(x\) and \(y\) at the respective places \(i\)</p>
+        <p class="math display">note = this process repeats itself also for matrix - vector and matrix - matrix products.</p>
+
+        <h2>Identity Matrix</h2>
+        <p><span class="math display">\[I_{ij}=
+            \begin{cases}
+            1 & i = j \\
+            0 & i\neq y\\
+            \end{cases} \]
+        </span></p>
+        <p class="math display">note = this expressions shows a case distinction with ones on the diagonal and zeros everywhere else. The identity says, that for example two expressions A and B produce the same value for all values of the variables in a certain range.</p>
+
+        <h2>Diagonal Matrix</h2>
+        <p><span class="math display">\[D_{ij}=
+            \begin{cases}
+            d_i & i = j \\
+            0 & i\neq y\\
+            \end{cases} \]
+        </span></p>
+        <p class="math display">note = this expressions show a case distinction where all non-diagonal elements are zeros.</p>
+
+        <h2>The Transpose</h2>
+        <p><span class="math display">\[(A^T)_{ij} = A_{ji}\]</span></p>
+        <p class="math display">note = is the flipping of the rows and columns. </p>
+
+        <h2>Symmetric Matrices</h2>
+        <p><span class="math display">\[A = A^T\]</span></p>
+        <p class="math display">note = symmetric matrix.</p>
+        <p><span class="math display">\[A = -A^T\]</span></p>
+        <p class="math display">note = anti symmetric matrix.</p>
+
+        <h2>The Trace</h2>
+        <p><span class="math display">\[trA = \sum_{i=1}^{n}A_{ii}\]</span></p>
+        <p class="math display">note = is the sum of diagonal elements in the matrix.</p>
+
+        <h2>Norms</h2>
+        <p><span class="math display">\[\Vert x \Vert_{2} = \sqrt{\sum_{i=1}^{n}x_{i}^2}\]</span></p>
+        <p class="math display">\(n\) = \(n\) elements of the vector</p>
+        <p class="math display">note = also known as the "SRSS" operation which is an acronym for square root of the sum of squares. The norm measures the "length" of an vector.</p>
+
+        <h2>Linear Dependence/Independence</h2>
+        <p><span class="math display">\[x_{n} = \sum_{i=1}^{n-1} \alpha_i x_{1}\]</span></p>
+        <p class="math display">\(x_n\) = the \(x_n\) vector of an set of vectors \(\{x_1, x_2, ..., x_n\} \)</p>
+        <p class="math display">\(\alpha_i\) = some scalar \(\{x_1, x_2, ..., x_n\} \)</p>
+        <p class="math display">note = if the expression in the figure is fullfilled \(x_n\) is linearly independent else linearly dependent.</p>
+
+        <h2>Rank</h2>
+        <p class="math display">column rank = number of linearly independent columns of an matrix \(A\).</p>
+        <p class="math display">row rank = number of linearly independent rows of an matrix \(A\).</p>
+        <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\).</p>
+
+        <!--<h2>The Inverse</h2>
+        <p class="math display">column rank = number of linearly independent columns of an matrix \(A\)</p>
+        <p class="math display">row rank = number of linearly independent rows of an matrix \(A\)</p>
+        <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\)</p>-->
+    </div>
+
+    <div class="source">
+        <!-- Pls type your name inside YOUR_NAME -->
+        <p>Max Hager</p><br><br>
+        <h4 id="h_sources">Sources:</h4>
+        <!-- Copy all your sources here, copy&paste "<p id="p_sources">[1] YOUR_SOURCE_1</p>" for every single source and
+        raise the number. If you have an online link, pls use "<p class="p_sources"><a href="YOUR_ADRESS">YOUR_SOURCE</a></p>"
+        If you didn't use a source, pls delete both parts-->
+        <!--For online links, put the URL inside YOUR_ADRESS and the URL or a describing name inside YOUR_SOURCE-->
+        <p class="p_sources"><a href="http://cs229.stanford.edu/section/cs229-linalg.pdf">[1] http://cs229.stanford.edu/section/cs229-linalg.pdf</a></p>
+    </div>
+</div>
+</body>
+</html>
