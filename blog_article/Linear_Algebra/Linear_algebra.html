@@ -54,7 +54,7 @@
 
         <h2>The Transpose</h2>
         <p><span class="math display">\[(A^T)_{ij} = A_{ji}\]</span></p>
-        <p class="math display">note = is the flipping of the rows and columns. </p>
+        <p class="math display">note = is the flipping of the rows and columns.</p>
 
         <h2>Symmetric Matrices</h2>
         <p><span class="math display">\[A = A^T\]</span></p>
@@ -68,13 +68,13 @@
 
         <h2>Norms</h2>
         <p><span class="math display">\[\Vert x \Vert_{2} = \sqrt{\sum_{i=1}^{n}x_{i}^2}\]</span></p>
-        <p class="math display">\(n\) = \(n\) elements of the vector</p>
+        <p class="math display">\(n\) = \(n\) elements of the vector.</p>
         <p class="math display">note = also known as the "SRSS" operation which is an acronym for square root of the sum of squares. The norm measures the "length" of an vector.</p>
 
         <h2>Linear Dependence/Independence</h2>
         <p><span class="math display">\[x_{n} = \sum_{i=1}^{n-1} \alpha_i x_{1}\]</span></p>
-        <p class="math display">\(x_n\) = the \(x_n\) vector of an set of vectors \(\{x_1, x_2, ..., x_n\} \)</p>
-        <p class="math display">\(\alpha_i\) = some scalar \(\{x_1, x_2, ..., x_n\} \)</p>
+        <p class="math display">\(x_n\) = the \(x_n\) vector of an set of vectors \(\{x_1, x_2, ..., x_n\}. \)</p>
+        <p class="math display">\(\alpha_i\) = some scalar \(\{x_1, x_2, ..., x_n\}. \)</p>
         <p class="math display">note = if the expression in the figure is fullfilled \(x_n\) is linearly independent else linearly dependent.</p>
 
         <h2>Rank</h2>
@@ -82,10 +82,35 @@
         <p class="math display">row rank = number of linearly independent rows of an matrix \(A\).</p>
         <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\).</p>
 
-        <!--<h2>The Inverse</h2>
-        <p class="math display">column rank = number of linearly independent columns of an matrix \(A\)</p>
-        <p class="math display">row rank = number of linearly independent rows of an matrix \(A\)</p>
-        <p class="math display">rank = column rank of \(A\) is equal to the row rank of \(A\), and so both quantities are called rank \(A\)</p>-->
+        <h2>The Inverse</h2>
+        <p><span class="math display">\[A^{-1}A = I = AA^{-1}\]</span></p>
+        <p class="math display">\(A^{-1}\) = inverse of the matrix \(A\).</p>
+        <p class="math display">note = the product of the inverse \(A^{-1}\) and \(A\) is equals to the identity \(I\).</p>
+
+        <h2>Orthogonal Matrices</h2>
+        <p><span class="math display">\[U^{T}U = I = UU^{T}\]</span></p>
+        <p class="math display">\(A^{-1}\) = inverse of the matrix \(A\).</p>
+        <p class="math display">note = two vectors are orthogonal if \(x^{T}y = 0\) and normalized if \(\Vert x \Vert_{2}\). In the case for a matrix this has to be the case for all columns to each other to be orthonormal.</p>
+
+        <h2>Range and Nullspace of a Matrix</h2>
+        <p><span class="math display">\[span(\{x_{1},... x_{n}\}) = \{v:v = \sum_{i=1}^n \alpha_i x_i, \alpha_i \in \mathbb{R} \}\]</span></p>
+        <p class="math display">\(span(\{x_{1},... x_{n}\})\) = set of all vectors that can be expressed as a linear combination of \(\{x_{1},... x_{n}\}.\)</p>
+        <p class="math display">\[R(A)= \{v \in \mathbb{R}^m: v = Ax, x \in \mathbb{R}^n\}\]</p>
+        <p class="math display">\(R(A)\) = range of a matrix  \(A\) is the span of the columns of \(A\).</p>
+        <p class="math display">\[N(A)= \{x \in \mathbb{R}^n: Ax=0\}\]</p>
+        <p class="math display">\(N(a)\) = nullspace of a matrix is the set of all vectros that are equal \(0\) when multiplied by \(A\). </p>
+
+        <h2>The Determinant</h2>
+        <p><span class="math display">\[S = \{v \in \mathbb{R}^n : v = \sum_{i=1}^n \alpha_i a_i \space where \space 0 \leq \alpha_i \leq 1, i = 1, ..., n\}\]   </span></p>
+        <p class="math display">\(S\) = the span but with coeffients in the range of \(0 \leq \alpha_i \leq 1\). The absolute value of the determinant of \(A\) is a measure of the "volume" of the set \(S\).</p>
+
+
+
+
+
+
+
+    
     </div>
 
     <div class="source">
